@@ -5,36 +5,8 @@ import {
   getDefaultClient,
 } from "connectkit";
 import { WagmiConfig, createClient } from "wagmi";
-import { polygonMumbai } from "wagmi/chains";
+import { polygonMumbai, goerli } from "wagmi/chains";
 import "./globals.css";
-
-const mantleChain = {
-  id: 5001,
-  name: "Mantle",
-  network: "Mantle",
-  iconUrl: "mantle_logo.png",
-  iconBackground: "#000",
-  nativeCurrency: {
-    decimals: 18,
-    name: "Mantle",
-    symbol: "BIT",
-  },
-  rpcUrls: {
-    default: {
-      http: ["https://rpc.testnet.mantle.xyz"],
-    },
-    public: {
-      http: ["https://rpc.testnet.mantle.xyz"],
-    },
-  },
-  blockExplorers: {
-    default: {
-      name: "Explorer Testnet",
-      url: "https://explorer.testnet.mantle.xyz",
-    },
-  },
-  testnet: true,
-};
 
 const firechain = {
   id: 997,
@@ -53,7 +25,7 @@ const firechain = {
 };
 
 // Choose which chains you'd like to show
-const chains = [firechain, polygonMumbai];
+const chains = [firechain, polygonMumbai, goerli];
 
 const client = createClient(
   getDefaultClient({
